@@ -1,0 +1,47 @@
+#!/bin/bash
+
+DEVICE=""
+USE_TOBY=false
+USE_DEDEDE=false
+
+# Parse args
+for arg in "$@"; do
+    case "$arg" in
+        -/*) DEVICE="${arg#-}" ;;       # strip leading "-" → /dev/sda
+        --toby) USE_TOBY=true ;;
+        ---dedede) USE_DEDEDE=true ;;
+    esac
+done
+
+if [[ -z "$DEVICE" ]]; then
+    echo "Error: No device specified (use -/dev/sdX)"
+    exit 1
+fi
+
+# --toby mode
+if $USE_TOBY; then
+    echo "[--toby] Dumping $DEVICE → output.img"
+    sudo dd if="$DEVICE" of=output.img bs=4M status=progress
+fi
+
+# ---dedede mode
+if $USE_DEDEDE; then
+    ZIP="shimboot_dedede.zip"
+    BIN="shimboot_dedede.bin"
+
+    if [[ -f "$ZIP" ]]; then
+        echo "[---dedede] Found $ZIP, extracting..."
+        unzip -o "$ZIP"
+
+        if [[ -f "$BIN" ]]; then
+            echo "[---dedede] Writing $BIN → $DEVICE"
+            sudo dd if="$BIN" of="$DEVICE" bs=4M status=progress
+        else
+            echo "Error: $BIN not found after extraction."
+            exit 1
+        fi
+    else
+        echo "Error: $ZIP not found in current directory."
+        exit 1
+    fi
+fi
