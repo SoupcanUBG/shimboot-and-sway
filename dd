@@ -2,14 +2,13 @@
 
 DEVICE=""
 USE_TOBY=false
-USE_DEDEDE=false
+BOARD=""
 
-# Parse args
 for arg in "$@"; do
     case "$arg" in
-        -/*) DEVICE="${arg#-}" ;;       # strip leading "-" → /dev/sda
+        -/*) DEVICE="${arg#-}" ;;
         --toby) USE_TOBY=true ;;
-        ---dedede) USE_DEDEDE=true ;;
+        ---*) BOARD="${arg#---}" ;;
     esac
 done
 
@@ -18,23 +17,20 @@ if [[ -z "$DEVICE" ]]; then
     exit 1
 fi
 
-# --toby mode
 if $USE_TOBY; then
     echo "[--toby] Dumping $DEVICE → output.img"
     sudo dd if="$DEVICE" of=output.img bs=4M status=progress
 fi
 
-# ---dedede mode
-if $USE_DEDEDE; then
-    ZIP="shimboot_dedede.zip"
-    BIN="shimboot_dedede.bin"
+if [[ -n "$BOARD" ]]; then
+    ZIP="shimboot_${BOARD}.zip"
+    BIN="shimboot_${BOARD}.bin"
 
     if [[ -f "$ZIP" ]]; then
-        echo "[---dedede] Found $ZIP, extracting..."
+        echo "[---$BOARD] Found $ZIP, extracting..."
         unzip -o "$ZIP"
-
         if [[ -f "$BIN" ]]; then
-            echo "[---dedede] Writing $BIN → $DEVICE"
+            echo "[---$BOARD] Writing $BIN → $DEVICE"
             sudo dd if="$BIN" of="$DEVICE" bs=4M status=progress
         else
             echo "Error: $BIN not found after extraction."
