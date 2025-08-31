@@ -1,4 +1,4 @@
-first install a prebuilt at [this link](https://github.com/ading2210/shimboot/releases)  your board name ![g](/assets/screenshot_line.jpg)
+first install a prebuilt at [this link](https://github.com/ading2210/shimboot/releases)  your board name [Screenshot](/assets/image.jpg)
 
 
 # dd script       
