@@ -12,4 +12,4 @@ use lsblk to find your usb and then type it here mine is /dev/sda so it is so fa
 you may have a different board or usb         
 location like /dev/sdb or smth            
        
-# I FORGOT ABOUT THIS DO ``sudo -E bash ./dd`` AND THEN THE REST OF IT
+# I FORGOT ABOUT THIS DO ``sudo -E bash ./dd`` AND THEN THE REST OF IT DO THIS IN THE DOWNLOADS FOLDER 
