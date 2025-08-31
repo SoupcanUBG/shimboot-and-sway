@@ -1,4 +1,4 @@
-first install a prebuilt at [this link](https://github.com/ading2210/shimboot/releases)  your board name ![Screenshot with line](assets/image.jpg)
+first install a prebuilt at [this link](https://github.com/ading2210/shimboot/releases)  your board name is what it should be ![Screenshot with line](assets/image.jpg)
 
 
 
