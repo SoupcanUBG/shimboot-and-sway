@@ -24,7 +24,7 @@ location like /dev/sdb or smth
 do power + esc + refresh once in a recovery menu do ctrl + d and enable developer mode once finished do power + esc + refresh again            
 and plug in the usb do number 3 and then password and username is both "user"      
 it will go into xfce open the konsole or command line thing and do ``sudo apt update`` and then     
-once finished do ``sudo apt install sway`` then  
+once finished do ``sudo apt install sway`` then  do these commands each one individually       
 ``sudo apt install waybar``       
 ``sudo apt install wofi``    
 ``sudo apt install kitty``    
