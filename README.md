@@ -33,7 +33,10 @@ once finished do ``sudo apt install sway`` then  do these commands each one indi
 ``mkdir ~/.config/sway``    
 ``mkdir ~/.config/waybar``       
 ``cp -r config/sway/config ~/.config/sway/config``      
-``cp -r config/waybar/* ~/.config/waybar/``     
+``cp -r config/waybar/* ~/.config/waybar/``    
+``mkdir ~/Pictures``        
+``mkdir ~/Pictures/wallpapers``         
+``cp -r 20.png ~/Pictures/wallpapers/`` 
 then do alt + shift + c          
 ``sudo reboot``
 
