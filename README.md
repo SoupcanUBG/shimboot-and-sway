@@ -12,4 +12,28 @@ use lsblk to find your usb and then type it here mine is /dev/sda so it is so fa
 you may have a different board or usb         
 location like /dev/sdb or smth            
        
-# I FORGOT ABOUT THIS DO ``sudo -E bash ./dd`` AND THEN THE REST OF IT DO THIS IN THE DOWNLOADS FOLDER 
+# I FORGOT ABOUT THIS DO ``sudo -E bash ./dd`` AND THEN THE REST OF IT DO THIS IN THE DOWNLOADS FOLDER      
+
+
+
+
+
+
+
+# once finished     
+do power + esc + refresh once in a recovery menu do ctrl + d and enable developer mode once finished do power + esc + refresh again            
+and plug in the usb do number 3 and then password and username is both "user"      
+it will go into xfce open the konsole or command line thing and do ``sudo apt update`` and then     
+once finished do ``sudo apt install sway`` then  
+``sudo apt install waybar``       
+``sudo apt install wofi``    
+``sudo apt install kitty``    
+``git clone https://github.com/SoupcanUBG/shimboot-and-sway/``                   
+``cd shimboot-and-sway``            
+``mkdir ~/.config/sway``    
+``mkdir ~/.config/waybar``       
+``cp -r config/sway/config ~/.config/sway/config``      
+``cp -r config/waybar/* ~/.config/waybar/``     
+then do alt + shift + c          
+``sudo reboot``
+
