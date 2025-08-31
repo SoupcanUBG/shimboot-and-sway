@@ -10,4 +10,6 @@ mine is toby so it would be for me ./dd -toby then the two dashes so ./dd -toby 
 use lsblk to find your usb and then type it here mine is /dev/sda so it is so far      
 ./dd -toby --/dev/sda and the final one is your board so in the full thing put ./dd -toby --/dev/sda ---dedede for me it will change for you,        
 you may have a different board or usb         
-location like /dev/sdb or smth       
+location like /dev/sdb or smth            
+       
+# I FORGOT ABOUT THIS DO ``sudo -E bash ./dd`` AND THEN THE REST OF IT
