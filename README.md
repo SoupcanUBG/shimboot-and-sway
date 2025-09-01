@@ -28,6 +28,7 @@ once finished do ``sudo apt install sway`` then  do these commands each one indi
 ``sudo apt install waybar``       
 ``sudo apt install wofi``    
 ``sudo apt install kitty``    
+``sudo apt install wlogout``    
 ``git clone https://github.com/SoupcanUBG/shimboot-and-sway/``                   
 ``cd shimboot-and-sway``            
 ``mkdir ~/.config/sway``    
